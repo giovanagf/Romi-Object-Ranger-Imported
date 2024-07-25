@@ -13,6 +13,7 @@ public class ArmRotateCommand extends Command  {
     //private Supplier<Double> m_xaxisSpeedSupplier;
     private Supplier<Double> m_zaxisRotateSupplier;
     private Timer cmdTimer;
+    private Supplier<Double> zaxisSpeedSupplier;
     /**
      * @param armRotate 
      * @param zaxisSpeedSupplier Lambda supplier of forward/backward speed
@@ -23,6 +24,7 @@ public ArmRotateCommand(
         double speed,
         Supplier<Double> xaxisSpeedSupplier){
     m_armRotate = armRotate;
+    m_zaxisRotateSupplier = zaxisSpeedSupplier; // created field 'zaxisSpeedSupplier'
     //m_xaxisSpeedSupplier = xaxisSpeedSupplier;
     addRequirements(armRotate);
     cmdTimer = new Timer(); 
