@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ArmRotate extends SubsystemBase {
 
+  private static final double speedMultiplier = 0;
   private final Servo m_servo;
 
   public ArmRotate(int servoPort) {
@@ -15,11 +16,6 @@ public class ArmRotate extends SubsystemBase {
     // Implement logic to handle position (e.g., scaling, limiting)
     m_servo.setPosition(position);
   }
-
-  public void armrotate(Double double1) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'armrotate'");
-  }// (Optional) Add methods for sensor data processing (if limit switches are added later)
 
   public void controlServo(double joystickValue){
     // Scale joystick value (optional)
