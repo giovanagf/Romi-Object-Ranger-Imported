@@ -103,6 +103,7 @@ public class RobotContainer {
 
   public Command getArmRotateCommand(){
     double armSpeed = 0.5; // Example speed value (replace with your desired speed)
-    return new ArmRotateCommand(m_armRotate, armSpeed,() -> -m_controller.getRawAxis(5));
+    Supplier<Double> zAxisSupplier = () -> -m_controller.getRawAxis(5); //Get Z-axis value 
+    return new ArmRotateCommand(m_armRotate, armSpeed, zAxisSupplier);
   }
 }
