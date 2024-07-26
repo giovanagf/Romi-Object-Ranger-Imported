@@ -5,11 +5,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ArmRotate extends SubsystemBase {
 
-  private static final double speedMultiplier = 0;
+  private static final double speedMultiplier = 0.1;
   private final Servo m_servo;
 
-  public ArmRotate(int servoPort) {
-    m_servo = new Servo(8);
+  public ArmRotate() {
+    m_servo = new Servo(5);
   }
 
   public void setPosition(double position) {
@@ -19,8 +19,10 @@ public class ArmRotate extends SubsystemBase {
 
   public void controlServo(double joystickValue){
     // Scale joystick value (optional)
-    double scaledValue = joystickValue * speedMultiplier; // Adjust speedMultiplier
-
+    double scaledValue = (joystickValue * speedMultiplier) +1.5; // Adjust speedMultiplier
+    scaledValue = Math.max(1.0, Math.min (scaledValue, 2.0));
+    System.out.println (scaledValue);
     m_servo.setSpeed(scaledValue); // Replace with appropriate speed value based on joystickValue
+  
   }
 }
