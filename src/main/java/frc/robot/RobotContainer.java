@@ -39,7 +39,7 @@ public class RobotContainer {
 
   // Create SmartDashboard chooser for autonomous routines
   private final SendableChooser<Command> m_chooser = new SendableChooser<>();
-  private final ArmRotate m_armRotate = new ArmRotate(0);
+  private final ArmRotate m_armRotate = new ArmRotate();
 
   // NOTE: The I/O pin functionality of the 5 exposed I/O pins depends on the hardware "overlay"
   // that is specified when launching the wpilib-ws server on the Romi raspberry pi.
